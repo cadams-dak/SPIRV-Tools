@@ -94,9 +94,9 @@ macro(spvtools_extinst_lang_headers NAME GRAMMAR_FILE)
       --extinst-output-path=${OUT_H}
     DEPENDS ${LANG_HEADER_PROCESSING_SCRIPT} ${GRAMMAR_FILE}
     COMMENT "Generate language specific header for ${NAME}.")
-  add_custom_target(spirv-tools-header-${NAME} DEPENDS ${OUT_H})
-  set_property(TARGET spirv-tools-header-${NAME} PROPERTY FOLDER "SPIRV-Tools build")
-  list(APPEND EXTINST_CPP_DEPENDS spirv-tools-header-${NAME})
+  add_custom_target(sth-${NAME} DEPENDS ${OUT_H})
+  set_property(TARGET sth-${NAME} PROPERTY FOLDER "SPIRV-Tools build")
+  list(APPEND EXTINST_CPP_DEPENDS sth-${NAME})
 endmacro(spvtools_extinst_lang_headers)
 
 spvtools_extinst_lang_headers("DebugInfo" ${EI_debuginfo})
